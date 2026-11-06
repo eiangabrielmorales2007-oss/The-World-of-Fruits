@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap');
+
+:root {
+  --ink: #24372b;
+  --muted: #718071;
+  --cream: #f6f3e8;
+  --paper: #fffdf6;
+  --green: #315b3d;
+  --line: #e5e7d9;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 8% 18%, rgba(237, 188, 91, .14) 0 2px, transparent 3px),
+    radial-gradient(circle at 92% 38%, rgba(94, 135, 79, .12) 0 3px, transparent 4px),
+    var(--cream);
+  font-family: 'DM Sans', sans-serif;
+}
+.page-shell { max-width: 1440px; margin: auto; padding: 24px 5.5%; }
+.hero {
+  min-height: 520px; position: relative; overflow: hidden; isolation: isolate;
+  border-radius: 28px; padding: 28px 5.5% 24px; color: #fffdf3;
+  background: linear-gradient(115deg, #244b35 0%, #3f7048 58%, #739052 100%);
+  box-shadow: 0 24px 60px rgba(38, 73, 47, .16);
+}
+.hero::before, .hero::after {
+  content: ""; position: absolute; z-index: -1; border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.13);
+}
+.hero::before { width: 520px; height: 520px; right: -90px; top: -190px; box-shadow: 0 0 0 35px rgba(255,255,255,.035), 0 0 0 75px rgba(255,255,255,.025); }
+.hero::after { width: 300px; height: 300px; right: 120px; bottom: -210px; }
+.topbar { display: flex; justify-content: space-between; align-items: center; position: relative; z-index: 2; }
+.brand { color: white; text-decoration: none; font-weight: 700; letter-spacing: .12em; font-size: 14px; }
+.brand span { color: #e9c77b; }
+.top-note { color: rgba(255,255,255,.72); font-size: 12px; letter-spacing: .06em; }
+.hero-content { position: relative; z-index: 2; max-width: 540px; padding: 75px 0 60px; }
+.eyebrow { font-size: 10px; font-weight: 700; letter-spacing: .22em; color: #9aab77; margin: 0 0 14px; }
+.hero .eyebrow { color: #e6c77e; }
+h1, h2, .type-title { font-family: 'Playfair Display', Georgia, serif; }
+h1 { font-size: clamp(58px, 8vw, 94px); line-height: .98; letter-spacing: -.045em; margin: 0 0 22px; }
+h1 em { color: #f0cd83; font-weight: 600; }
+.hero-copy { color: rgba(255,255,255,.78); max-width: 410px; line-height: 1.8; font-size: 14px; }
+.hero-button { display: inline-flex; gap: 22px; align-items: center; margin-top: 20px; padding: 13px 18px; border-radius: 999px; background: #f0cd83; color: #294a34; text-decoration: none; font-size: 12px; font-weight: 700; transition: transform .2s, background .2s; }
+.hero-button:hover { transform: translateY(-3px); background: #ffdfa0; }
+.hero-button span { font-size: 18px; line-height: 10px; }
+.hero-art { position: absolute; width: 48%; height: 100%; right: 0; top: 0; pointer-events: none; }
+.fruit-emoji { position: absolute; display: grid; place-items: center; border-radius: 50%; background: rgba(255,255,255,.11); border: 1px solid rgba(255,255,255,.17); box-shadow: 0 18px 35px rgba(0,0,0,.12); backdrop-filter: blur(4px); }
+.emoji-one { font-size: 78px; width: 150px; height: 150px; top: 105px; right: 34%; transform: rotate(-12deg); }
+.emoji-two { font-size: 65px; width: 125px; height: 125px; top: 265px; right: 12%; transform: rotate(12deg); }
+.emoji-three { font-size: 62px; width: 120px; height: 120px; top: 55px; right: 7%; }
+.emoji-four { font-size: 60px; width: 115px; height: 115px; bottom: 65px; right: 43%; }
+.emoji-five { font-size: 54px; width: 105px; height: 105px; bottom: 50px; right: 5%; }
+.art-caption { position: absolute; top: 225px; right: 43%; font-family: 'Playfair Display',serif; color: rgba(255,255,255,.58); font-size: 22px; line-height: 1.05; letter-spacing: .13em; transform: rotate(-8deg); }
+.hero-bottom { position: absolute; bottom: 24px; left: 5.5%; right: 5.5%; display: flex; justify-content: space-between; color: rgba(255,255,255,.56); font-size: 9px; letter-spacing: .17em; }
+.hero-bottom span { color: #edcc82; font-size: 17px; }
+main { padding: 68px 2% 20px; }
+.intro-section { display: grid; grid-template-columns: 1fr 1.2fr; gap: 50px; align-items: end; padding: 0 2% 65px; }
+h2 { font-size: clamp(30px, 4vw, 43px); margin: 0; letter-spacing: -.025em; }
+.intro-section > p { max-width: 590px; color: var(--muted); font-size: 14px; line-height: 1.9; margin: 0; }
+.section-heading { display: flex; justify-content: space-between; align-items: end; padding: 0 2% 24px; }
+.section-hint { color: var(--muted); font-size: 12px; }
+.type-list { display: grid; gap: 16px; }
+.type-panel { background: var(--paper); border: 1px solid var(--line); border-radius: 19px; overflow: hidden; box-shadow: 0 8px 24px rgba(51,69,45,.035); }
+.type-toggle { width: 100%; display: flex; align-items: center; gap: 22px; text-align: left; border: 0; background: transparent; padding: 24px 28px; color: var(--ink); cursor: pointer; }
+.type-toggle:hover { background: rgba(237, 241, 222, .55); }
+.type-number { font-size: 12px; color: #8b9b7a; letter-spacing: .12em; }
+.type-title-wrap { display: grid; gap: 5px; flex: 1; }
+.type-title { font-size: 27px; }
+.type-subtitle { color: var(--muted); font-size: 11px; letter-spacing: .04em; }
+.type-icon { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: #edf1e4; color: var(--green); font-size: 22px; transition: transform .25s; }
+.type-toggle[aria-expanded="true"] .type-icon { transform: rotate(45deg); }
+.type-content { padding: 0 28px 30px; animation: reveal .25s ease; }
+@keyframes reveal { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
+.definition { max-width: 760px; color: var(--muted); font-size: 13px; line-height: 1.8; margin: 0 0 22px 44px; }
+.fruit-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(135px, 1fr)); gap: 14px; }
+.fruit-card { min-width: 0; overflow: hidden; display: flex; flex-direction: column; text-decoration: none; color: var(--ink); background: #fff; border: 1px solid #edf0e7; border-radius: 13px; transition: transform .2s, box-shadow .2s; }
+.fruit-card:hover { transform: translateY(-5px); box-shadow: 0 12px 22px rgba(46,75,48,.12); }
+.fruit-card img { width: 100%; height: 118px; object-fit: cover; background: #edf0e7; display: block; }
+.fruit-card span { padding: 11px 10px 12px; text-align: center; font-size: 12px; font-weight: 600; }
+footer { margin: 65px 2% 0; padding: 22px 0; border-top: 1px solid #dfe4d5; display: flex; justify-content: space-between; gap: 20px; color: var(--muted); font-size: 11px; }
+footer span { color: var(--green); font-weight: 700; letter-spacing: .15em; }
+footer p { margin: 0; }
+[hidden] { display: none !important; }
+
+@media (max-width: 760px) {
+  .page-shell { padding: 12px; }
+  .hero { min-height: 590px; padding: 22px 7%; border-radius: 20px; }
+  .top-note { display: none; }
+  .hero-content { padding: 75px 0 155px; }
+  .hero-copy { max-width: 330px; }
+  .hero-art { width: 100%; height: 230px; top: auto; bottom: 22px; opacity: .8; }
+  .emoji-one { width: 90px; height: 90px; font-size: 48px; top: 10px; right: 55%; }
+  .emoji-two { width: 80px; height: 80px; font-size: 43px; top: 80px; right: 27%; }
+  .emoji-three { width: 75px; height: 75px; font-size: 40px; top: 8px; right: 8%; }
+  .emoji-four { width: 70px; height: 70px; font-size: 38px; bottom: 8px; right: 57%; }
+  .emoji-five { width: 68px; height: 68px; font-size: 36px; bottom: 4px; right: 10%; }
+  .art-caption { display: none; }
+  .hero-bottom { font-size: 7px; letter-spacing: .1em; }
+  main { padding: 48px 0 10px; }
+  .intro-section { grid-template-columns: 1fr; gap: 15px; padding: 0 3% 48px; }
+  .section-heading { display: block; padding: 0 3% 20px; }
+  .section-hint { margin-bottom: 0; }
+  .type-toggle { padding: 20px 17px; gap: 14px; }
+  .type-title { font-size: 23px; }
+  .type-content { padding: 0 15px 22px; }
+  .definition { margin-left: 0; }
+  .fruit-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .fruit-card img { height: 125px; }
+  footer { margin-top: 45px; }
+}
+
+.image-placeholder { height: 118px; display: grid; place-items: center; background: #edf0e7; font-size: 36px; }
+@media (max-width: 760px) { .image-placeholder { height: 125px; } }
